@@ -17,5 +17,16 @@ require("gzn/plugins/lualine")
 
 require("gzn/plugins/gitsigns")
 
+vim.defer_fn(function()
+	require("gzn/plugins/harpoon")
+
+	require("gzn/plugins/undotree")
+end, 0)
+
+require("gzn/plugins/keyseer")
+
+
+require("gzn/plugins/startup")
+
 require("gzn/options")
 require("gzn/keymaps")

@@ -99,8 +99,26 @@ return require('packer').startup(function(use)
 	-- git
 	use "lewis6991/gitsigns.nvim"
 
+	-- Harpoon
+	use "ThePrimeagen/harpoon"
+
+	-- Undo tree
+	use "mbbill/undotree"
+
+	-- cool startup
+	use {
+		"startup-nvim/startup.nvim",
+		requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+	}
+
+	-- Keymaps help
+	use {'jokajak/keyseer.nvim', config = function() require('keyseer').setup() end }
+
 	-- nvim plugins dev 
 	use "folke/neodev.nvim"
+
+	-- vim trainer
+	use "ThePrimeagen/vim-be-good"
 
 	if packer_bootstrap then
 		require('packer').sync()
