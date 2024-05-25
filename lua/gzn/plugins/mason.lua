@@ -14,6 +14,15 @@ require("mason-lspconfig").setup({
 		"cmake",
 		"ltex",
 		"lua_ls",
+		"ocamllsp",
+		"omnisharp",
+		"omnisharp_mono",
+		"jdtls",
+		"neocmake",
+		"quick_lint_js",
+		"autotools_ls",
+		"pylsp",
+		"solargraph"
 	},
 })
 
@@ -61,6 +70,51 @@ nvim_lsp.lua_ls.setup ({
 })
 
 nvim_lsp.cmake.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.ocamllsp.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.omnisharp.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.omnisharp_mono.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.jdtls.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.neocmake.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.quick_lint_js.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.autotools_ls.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.pylsp.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.solargraph.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

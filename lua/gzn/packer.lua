@@ -65,9 +65,9 @@ return require('packer').startup(function(use)
 	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 	-- LSP 
-	use "neovim/nvim-lspconfig" -- enable LSP
 	use "williamboman/mason.nvim" -- simple to use language server installer
 	use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+	use "neovim/nvim-lspconfig" -- enable LSP
 	use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
 	-- telescope
@@ -119,6 +119,9 @@ return require('packer').startup(function(use)
 
 	-- vim trainer
 	use "ThePrimeagen/vim-be-good"
+
+	-- java lsp 
+	use "mfussenegger/nvim-jdtls"
 
 	if packer_bootstrap then
 		require('packer').sync()
