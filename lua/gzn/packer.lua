@@ -30,8 +30,9 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- My plugins here
 
-	-- My colorscheme
+	-- My colorschemes
 	use "folke/tokyonight.nvim"
+	use "rose-pine/neovim"
 
 	-- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/popup.nvim"

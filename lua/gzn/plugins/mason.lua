@@ -21,8 +21,7 @@ require("mason-lspconfig").setup({
 		"neocmake",
 		"quick_lint_js",
 		"autotools_ls",
-		"pylsp",
-		"solargraph"
+		"pylsp"
 	},
 })
 
