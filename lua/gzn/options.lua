@@ -47,6 +47,7 @@ vim.opt.updatetime = 300                        -- faster completion (4000ms def
 vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.shortmess:append "c"
+vim.opt.fillchars = {eob = " "}
 
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd [[set iskeyword+=-]]

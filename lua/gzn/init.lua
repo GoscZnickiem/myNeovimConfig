@@ -2,6 +2,8 @@ require("gzn/packer")
 
 require("gzn/plugins/colors")
 
+require("gzn/plugins/oil")
+
 require("gzn/plugins/neodev")
 require("gzn/plugins/cmp")
 require("gzn/plugins/mason")

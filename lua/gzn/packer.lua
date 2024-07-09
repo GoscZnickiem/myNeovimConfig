@@ -34,6 +34,16 @@ return require('packer').startup(function(use)
 	use "folke/tokyonight.nvim"
 	use "rose-pine/neovim"
 
+	-- Better netrw
+	require("packer").startup(function()
+		use({
+			"stevearc/oil.nvim",
+			config = function()
+				require("oil").setup()
+			end,
+		})
+	end)
+
 	-- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/popup.nvim"
 
