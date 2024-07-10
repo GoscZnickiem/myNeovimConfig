@@ -1,4 +1,3 @@
---require("gzn/packer")
 require("gzn/lazy")
 
 require("gzn/plugins/colors")

@@ -31,6 +31,7 @@ local telescope = require('telescope.builtin')
 
 map("n", "<leader>pf", telescope.find_files)
 map("n", "<leader>pg", telescope.live_grep)
+map("n", "<leader>pr", telescope.oldfiles)
 map("n", "<leader>pb", telescope.buffers)
 map("n", "<leader>th", telescope.help_tags)
 
