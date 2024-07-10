@@ -1,6 +1,6 @@
 vim.cmd "colorscheme slate"
 
-local useRose = true
+local useRose = false
 
 local colorscheme1 = "tokyonight-moon"
 
