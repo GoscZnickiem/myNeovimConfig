@@ -21,7 +21,8 @@ require("mason-lspconfig").setup({
 		"neocmake",
 		"quick_lint_js",
 		"autotools_ls",
-		"pylsp"
+		"pylsp",
+		"rust_analyzer"
 	},
 })
 
@@ -118,3 +119,19 @@ nvim_lsp.solargraph.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+nvim_lsp.rust_analyzer.setup ({
+    settings = {
+        ['rust-analyzer'] = {
+            check = {
+                command = "clippy";
+            },
+            diagnostics = {
+                enable = true;
+            }
+        }
+    },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
