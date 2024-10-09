@@ -16,7 +16,7 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"ocamllsp",
 		"omnisharp",
-		"omnisharp_mono",
+		-- "omnisharp_mono",
 		"jdtls",
 		"neocmake",
 		"quick_lint_js",
@@ -85,10 +85,10 @@ nvim_lsp.omnisharp.setup ({
 	capabilities = capabilities,
 })
 
-nvim_lsp.omnisharp_mono.setup ({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+-- nvim_lsp.omnisharp_mono.setup ({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 nvim_lsp.jdtls.setup ({
 	on_attach = on_attach,
