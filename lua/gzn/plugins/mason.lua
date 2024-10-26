@@ -62,6 +62,10 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 nvim_lsp.clangd.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	cmd = {'clangd', '--background-index', '--clang-tidy', '--log=verbose'},
+	init_options = {
+		fallbackFlags = { '-std=c++20' },
+	},
 })
 
 nvim_lsp.lua_ls.setup ({
