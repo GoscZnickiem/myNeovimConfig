@@ -1,54 +1,53 @@
-local opts = { noremap = true, silent = true }
-
-local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, opts)
+local function map(mode, lhs, rhs, opts)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, lhs, rhs, options)
 end
 
--- map("", "<Space>", "<Nop>")
+-- don't do anything on escape in normal mode
+map("n", "<esc>", "")
 
-map("n", "<leader>px", ":Oil<CR>")
+-- big versions of hjkl
+map({"n", "x", "o"}, "H", "^")
+map({"n", "x", "o"}, "J", "}")
+map({"n", "x", "o"}, "K", "{")
+map({"n", "x", "o"}, "L", "$")
 
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
+-- move selected lines
+map("x", "J", ":m '>+1<CR>gv=gv")
+map("x", "K", ":m '<-2<CR>gv=gv")
 
+-- indent selected lines
+map("x", "<", "<gv")
+map("x", ">", ">gv")
+
+-- keep the cursor centered
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
-map("x", "<leader>p", [["_dP]])
-map({"n", "v"}, "<leader>d", [["_d]])
+-- keep kursor position when joining lines
+map("n", "<leader>j", "mzJ`z")
 
-map({"n", "v"}, "<leader>y", [["+y]])
-map("n", "<leader>Y", [["+Y]])
+-- don't yank too much
+map("x", "p", '"_dP')
+map("n", "x", '"_x')
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- run the q macro
+map("n", "Q", "@q")
 
-vim.keymap.set('n', 'i', function () return string.match(vim.api.nvim_get_current_line(), '%g') == nil and 'cc' or 'i' end, {expr=true, noremap=true, silent=true})
+-- begin input with cc on an empty line (auto-indents it)
+map("n", "i", function () return string.match(vim.api.nvim_get_current_line(), '%g') == nil and '"_cc' or "i" end, {expr = true})
 
-vim.keymap.set("n", "<leader><Tab>", [[:lua vim.lsp.buf.code_action()<CR>]])
+-- copy to clipboard
+map({"n", "v"}, "<leader>y", '"+y')
+map("n", "<leader>Y", '"+Y')
 
--- telescope
-local telescope = require('telescope.builtin')
-
-map("n", "<leader>pf", telescope.find_files)
-map("n", "<leader>pg", telescope.live_grep)
-map("n", "<leader>pr", telescope.oldfiles)
-map("n", "<leader>pb", telescope.buffers)
-map("n", "<leader>th", telescope.help_tags)
-
--- harpoon
-local harpoonMark = require("harpoon.mark")
-local harpoonUI = require("harpoon.ui")
-vim.keymap.set("n", "<leader>a", harpoonMark.add_file)
-vim.keymap.set("n", "<leader>ca", harpoonMark.clear_all)
-
-vim.keymap.set("n", "<C-e>", harpoonUI.toggle_quick_menu)
-
-vim.keymap.set("n", "<C-i>", function() harpoonUI.nav_file(1) end)
-vim.keymap.set("n", "<C-o>", function() harpoonUI.nav_file(2) end)
-vim.keymap.set("n", "<C-j>", function() harpoonUI.nav_file(3) end)
-vim.keymap.set("n", "<C-k>", function() harpoonUI.nav_file(4) end)
-vim.keymap.set("n", "<C-n>", function() harpoonUI.nav_file(5) end)
-vim.keymap.set("n", "<C-m>", function() harpoonUI.nav_file(6) end)
-
-vim.keymap.set("n", "<C-]>", harpoonUI.nav_next)
-vim.keymap.set("n", "<C-[>", harpoonUI.nav_prev)
+-- replace the word under cursor
+map("n", "<leader>s", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("v", "s", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]])
+map("v", "S", [["hy:%s/\<<C-r>h/<C-r>h\>/gI<Left><Left><Left>]])

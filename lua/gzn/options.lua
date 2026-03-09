@@ -1,5 +1,3 @@
--- :help options
-
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
@@ -18,7 +16,7 @@ vim.opt.ruler = true
 
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbered lines
-vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
+vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 
 vim.opt.smartindent = true                      -- make indenting smarter again
 vim.opt.expandtab = false						-- convert tabs to spaces
@@ -36,12 +34,12 @@ vim.opt.undofile = true                         -- enable persistent undo
 
 vim.opt.wrap = false                            -- display lines as one long line
 
-vim.opt.smartcase = true                        -- smart case
 vim.opt.ignorecase = true                       -- ignore case in search patterns
+vim.opt.smartcase = true                        -- smart case
 
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
-vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
+vim.opt.mouse = ""								-- disable the mouse in neovim
 vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.scrolloff = 8                           -- is one of my fav
@@ -49,7 +47,16 @@ vim.opt.sidescrolloff = 8
 vim.opt.shortmess:append "c"
 vim.opt.fillchars = {eob = " "}
 
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]]
+vim.o.fixendofline = true
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	command = [[%s/\s\+$//e]],
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	command = [[%s/\n\+\%$//e]],
+})
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
