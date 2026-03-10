@@ -15,8 +15,9 @@ return {
 	},
 	keys = {
 		{ "<leader>f", function() require("telescope.builtin").find_files() end },
-		{ "<leader>g", function() require("telescope.builtin").live_grep() end },
+		{ "<leader>l", function() require("telescope.builtin").live_grep() end },
 		{ "<leader>r", function() require("telescope.builtin").oldfiles() end },
+		{ "<leader>g", function() require("gzn.telescope_pickers").remote_grep() end },
 	},
 	config = function(_, opts)
 		local telescope = require("telescope")
