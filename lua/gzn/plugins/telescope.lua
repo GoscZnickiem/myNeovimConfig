@@ -17,6 +17,7 @@ return {
 		{ "<leader>f", function() require("telescope.builtin").find_files() end },
 		{ "<leader>g", function() require("telescope.builtin").live_grep() end },
 		{ "<leader>r", function() require("telescope.builtin").oldfiles() end },
+		{ "<leader>c", function() require("gzn.modules.theme").themes() end },
 	},
 	config = function(_, opts)
 		local telescope = require("telescope")
