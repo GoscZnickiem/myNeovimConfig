@@ -6,7 +6,7 @@ end
 
 -- map("", "<Space>", "<Nop>")
 
-map("n", "<leader>px", ":Oil<CR>")
+map("n", "<leader>x", ":Oil<CR>")
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
@@ -29,11 +29,9 @@ vim.keymap.set("n", "<leader><Tab>", [[:lua vim.lsp.buf.code_action()<CR>]])
 -- telescope
 local telescope = require('telescope.builtin')
 
-map("n", "<leader>pf", telescope.find_files)
-map("n", "<leader>pg", telescope.live_grep)
-map("n", "<leader>pr", telescope.oldfiles)
-map("n", "<leader>pb", telescope.buffers)
-map("n", "<leader>th", telescope.help_tags)
+map("n", "<leader>ff", telescope.find_files)
+map("n", "<leader>fg", telescope.live_grep)
+map("n", "<leader>fr", telescope.oldfiles)
 
 -- harpoon
 local harpoonMark = require("harpoon.mark")

@@ -11,15 +11,9 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"clangd",
-		"cmake",
 		"ltex",
 		"lua_ls",
-		"ocamllsp",
-		"omnisharp",
-		-- "omnisharp_mono",
 		"jdtls",
-		"neocmake",
-		"quick_lint_js",
 		"autotools_ls",
 		"pylsp",
 		"rust_analyzer"
@@ -63,9 +57,6 @@ nvim_lsp.clangd.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = {'clangd', '--background-index', '--clang-tidy', '--log=verbose'},
-	init_options = {
-		fallbackFlags = { '-std=c++20' },
-	},
 })
 
 nvim_lsp.lua_ls.setup ({
@@ -73,37 +64,7 @@ nvim_lsp.lua_ls.setup ({
 	capabilities = capabilities,
 })
 
-nvim_lsp.cmake.setup ({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-nvim_lsp.ocamllsp.setup ({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-nvim_lsp.omnisharp.setup ({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
--- nvim_lsp.omnisharp_mono.setup ({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
-
 nvim_lsp.jdtls.setup ({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-nvim_lsp.neocmake.setup ({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-nvim_lsp.quick_lint_js.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -138,3 +99,12 @@ nvim_lsp.rust_analyzer.setup ({
 	capabilities = capabilities,
 })
 
+nvim_lsp.ts_ls.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+nvim_lsp.svelte.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

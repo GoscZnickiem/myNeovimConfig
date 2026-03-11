@@ -28,9 +28,9 @@ require("startup").setup({
 		title = "Basic Commands",
 		margin = 5,
 		content = {
-			{ " Find File", "Telescope find_files", "<leader>pf" },
-			{ "󰍉 Find Word", "Telescope live_grep", "<leader>pg" },
-			{ " Recent Files", "Telescope oldfiles", "<leader>pr" },
+			{ " Find File", "Telescope find_files", "<leader>ff" },
+			{ "󰍉 Find Word", "Telescope live_grep", "<leader>fg" },
+			{ " Recent Files", "Telescope oldfiles", "<leader>fr" },
 			{ " File Browser", "Oil", "<leader>px" },
 			{ " Colorschemes", "Telescope colorscheme", "<leader>cs" },
 			{ " New File", "lua require'startup'.new_file()", "<leader>n" },
