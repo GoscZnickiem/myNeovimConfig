@@ -51,3 +51,7 @@ map("n", "<leader>s", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("v", "s", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]])
 map("v", "S", [["hy:%s/\<<C-r>h/<C-r>h\>/gI<Left><Left><Left>]])
+
+-- terminal keymaps
+map("n", "<leader>t", "<cmd>terminal<cr>i")
+map("t", "<esc>", "exit<cr>q")

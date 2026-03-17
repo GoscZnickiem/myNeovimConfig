@@ -31,14 +31,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", ".", function() vim.diagnostic.jump({ count = 1, float = true }) end)
 
 		-- show documentation for what is under cursor
-		map("n", "<Tab>", vim.lsp.buf.hover)
-
-		map("n", "<leader>=", function()
-			vim.lsp.buf.format({
-				bufnr = ev.buf,
-				async = true,
-			})
-		end)
+		map("n", "<leader>k", vim.lsp.buf.hover)
 	end,
 });
 
