@@ -32,6 +32,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- show documentation for what is under cursor
 		map("n", "<leader>k", vim.lsp.buf.hover)
+
+		map("n", "<leader>l", "<cmd>LspRestart<cr>")
 	end,
 });
 
