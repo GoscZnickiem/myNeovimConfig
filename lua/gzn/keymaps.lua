@@ -54,4 +54,4 @@ map("v", "S", [["hy:%s/\<<C-r>h/<C-r>h\>/gI<Left><Left><Left>]])
 
 -- terminal keymaps
 map("n", "<leader>t", "<cmd>terminal<cr>i")
-map("t", "<esc>", "exit<cr>q")
+map("t", "<esc>", "<C-d><C-d>")
